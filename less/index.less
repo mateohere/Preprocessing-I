@@ -4,6 +4,9 @@
    License: none (public domain)
 */
 
+@import 
+url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,7 +56,274 @@ table {
     box-sizing: border-box;
 }
 
+
 html, body {
-    height: 100%;
+	height: 100%;
+
 }
+
+// Variables
+
+@titles: 'Raleway', sans-serif;
+@serif: 'Playfair Display', serif;
+@light: #D3D3D3;
+@dark: #BEBEBE;
+
+// Mixins
+
+.left(){
+	display: flex;
+	justify-content: flex-start;
+}
+.center(){
+	display: flex;
+	justify-content: center;
+}
+.right(){
+	display: flex;
+	justify-content: flex-end;
+}
+
+// Main Styles 
+
+.container {
+	padding: 0 4%;
+
+	header{
+		.right();
+		padding:2.8% 0;
+		
+		nav{
+			width: 100%;
+			
+			.links{
+				display: flex;
+				justify-content: space-evenly;
+				margin-left: 50%;
+				
+				a{
+					text-decoration: none;
+					font-family: @titles;
+					font-size: 1.3rem;
+					color:black;
+
+					@media (max-width: 500px){
+						font-size: .9rem;
+						margin-left: 3%;
+					}
+
+					&:hover{
+						color: @dark;
+						
+					}
+					}
+				}
+			}
+		}
+
+		// Top Section
+	.top{
+		background-color: @light;
+		padding: 3% 5% 6% 2%;
+		width: 100%;
+		border-radius: 5px;
+
+		.photo{
+			width: 50%;
+			margin:0;
+
+			img{
+				width:70%;
+			}
+		}
+
+		.name{
+
+			h1{
+				font-family: @titles;
+				font-size: 3rem;
+				padding: 2% 0;
+
+					@media (max-width: 500px){
+						font-size: 2rem;
+					}
+			}
+			p{
+				font-family: @serif;
+				font-size: 1.3rem;
+				padding-bottom: 5%;
+			}
+		}
+
+		.offer{
+
+			p{
+				font-family: @serif;
+				font-size: 1rem;
+				padding-bottom: 2%;
+
+					@media (max-width: 500px){
+						font-size: .8rem;
+					}
+
+			}
+		}
+
+		.but{
+			button{
+				background-color: #707070;
+				padding: 1% 3% 1% 3%;
+				font-family: @titles;
+				color: white;
+				border-radius: 5px;
+				font-size: 1rem;
+
+				&:hover {
+					color: black;
+				}
+			}
+		}
+	}
+
+	//Middle Section
+
+	.middle{
+		display: flex;
+		padding-top: 3%;
+
+		.intro{
+			width:50%;
+			h2{
+				font-family: @titles;
+				font-size: 2rem;
+				padding: 2% 0;
+			}
+			p{
+				font-family: @serif;
+				font-size: .9rem;
+				line-height: 20px;
+			}
+		}
+
+		.side{
+			background-color: @light;
+			margin-left: 7%;
+			height: 60%;
+			padding: 2%;
+			border-radius: 10px;
+			@media (max-width: 500px){
+				margin-top: 20%;
+			}			
+		
+			h2{
+				font-family: @titles;
+				font-size: 1.9rem;
+				padding: 6% 0;
+
+					@media(max-width: 500px){
+						font-size: 1.3rem;
+					}	
+			}
+			ul{
+				font-family: @titles;
+				font-size: 1.1rem;
+				color:white;
+				
+				li{
+					margin: 1% 0 6% 6%;
+				}
+			}
+		}
+	}
+
+	// Bottom Section
+
+	.bottom{
+		padding-top: 3.5%;
+		margin-bottom: 3%;
+
+		h2{
+			font-family: @titles;
+			font-size: 1.8rem;
+			padding-bottom: 2%;
+		}
+	
+		.titles{
+			display: flex;
+			justify-content: space-between;
+			font-family: @titles;
+			font-size: 1.5rem;
+			margin-left: 1%;
+			margin-bottom: 2%;
+
+			@media (max-width: 500px){
+				font-size: 1.3rem;
+			}
+		}
+
+		.apple{
+			display: flex;
+			justify-content: space-between;
+			font-family: @serif;
+			font-size: 1rem;
+			padding:2% 1%;
+			margin-left: 1%;
+			background-color: @light;
+			border-radius: 5px;
+
+			@media (max-width: 500px){
+				font-size: .9rem;
+			}
+		}
+
+		.microsoft{
+			display: flex;
+			justify-content: space-between;
+			font-family: @serif;
+			font-size: 1rem;
+			padding:2% 1%;
+			margin-left: 1%;
+
+			@media (max-width: 500px){
+				font-size: .9rem;
+			}
+		}
+
+		.amazon{
+			display: flex;
+			justify-content: space-between;
+			font-family: @serif;
+			font-size: 1rem;
+			padding:2% 1%;
+			margin-left: 1%;
+			background-color: @light;
+			border-radius: 5px;
+
+			@media (max-width: 500px){
+				font-size: .9rem;
+			}
+		}
+	}
+
+	footer{
+		width: 100%;
+		background-color: #686868;
+		padding-top: 3%;
+		.center();
+		margin:0;
+		border-radius: 3px;
+		color: white;
+		font-family: @titles;
+		font-size: 1.3rem;
+		padding-bottom: 4%;
+
+		@media (max-width: 500px){
+			font-size: 1rem;
+		}
+	}
+}
+
+
+
+
 
